@@ -69,7 +69,7 @@ function qlsv_sinhvien_page() {
                 <tr><th>Họ tên</th><td><input type="text" name="ho_ten" value="<?php echo $edit_data ? esc_attr($edit_data->ho_ten) : ''; ?>" required></td></tr>
                 <tr><th>Ngày sinh</th><td><input type="date" name="ngay_sinh" value="<?php echo $edit_data ? esc_attr($edit_data->ngay_sinh) : ''; ?>" required></td></tr>
                 <tr><th>Giới tính</th><td>
-                    <select name="gioi_t используетсяinh">
+                    <select name="gioi_tinh">
                         <option value="Nam" <?php echo $edit_data && $edit_data->gioi_tinh == 'Nam' ? 'selected' : ''; ?>>Nam</option>
                         <option value="Nữ" <?php echo $edit_data && $edit_data->gioi_tinh == 'Nữ' ? 'selected' : ''; ?>>Nữ</option>
                     </select>
@@ -112,15 +112,8 @@ function qlsv_sinhvien_page() {
             </tbody>
         </table>
         <?php echo qlsv_pagination($total_items, $per_page, $current_page); ?>
-        <a href="<?php echo esc_url(add_query_arg('qlsv_logout', '1')); ?>" class="button">Đăng xuất</a>
+        
     </div>
     <?php
-    if (isset($_GET['qlsv_logout'])) {
-        if (!session_id()) {
-            session_start();
-        }
-        session_destroy();
-        wp_redirect(admin_url('admin.php?page=qlsv_sinhvien'));
-        exit;
-    }
+    
 }

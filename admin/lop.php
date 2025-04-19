@@ -91,13 +91,8 @@ function qlsv_lop_page() {
             </tbody>
         </table>
         <?php echo qlsv_pagination($total_items, $per_page, $current_page); ?>
-        <a href="<?php echo esc_url(add_query_arg('qlsv_logout', '1')); ?>" class="button">Đăng xuất</a>
+        
     </div>
     <?php
-    if (isset($_GET['qlsv_logout'])) {
-        session_start();
-        session_destroy();
-        wp_redirect(admin_url('admin.php?page=qlsv_lop'));
-        exit;
-    }
+    
 }

@@ -90,7 +90,7 @@ function qlsv_users_page() {
             </tbody>
         </table>
         <?php echo qlsv_pagination($total_items, $per_page, $current_page); ?>
-        <a href="<?php echo esc_url(add_query_arg('qlsv_logout', '1')); ?>" class="button">Đăng xuất</a>
+        
     </div>
     <?php
     if (isset($_GET['qlsv_logout'])) {

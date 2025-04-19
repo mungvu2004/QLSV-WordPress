@@ -22,15 +22,8 @@ function qlsv_dashboard_page() {
             <div>Tổng số lớp: <?php echo esc_html($total_lop); ?></div>
             <div>Tổng số khoa: <?php echo esc_html($total_khoa); ?></div>
         </div>
-        <a href="<?php echo esc_url(add_query_arg('qlsv_logout', '1')); ?>" class="button">Đăng xuất</a>
+        
     </div>
     <?php
-    if (isset($_GET['qlsv_logout'])) {
-        if (!session_id()) {
-            session_start();
-        }
-        session_destroy();
-        wp_redirect(admin_url('admin.php?page=qlsv_dashboard'));
-        exit;
-    }
+
 }
